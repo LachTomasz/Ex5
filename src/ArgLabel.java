@@ -21,7 +21,7 @@ public class ArgLabel {
         if (StringLength < 0){
             if (StringLength % 2 == 0){
                 for(int i = 0; i < StringLength/2; i++){
-                    LabelLine3.s
+                    LabelLine3
                 }
 
             }
