@@ -11,23 +11,21 @@ public class ArgLabel {
 
        String LabelLine1 = "********** Programowanie **********"; //35
        String LabelLine2 = "*    obiektowe w języku Java      *";
-       String LabelLine3 = "";
+       StringBuilder LabelLine3 = new StringBuilder();
        String LabelLine4 = "***********************************";
        String Name = args[0];
        String Surname = args[1];
        int StringLength = 32 - Name.length() - Surname.length();
        if (StringLength > 0) {
             if (StringLength % 2 == 0) {
-                for (int i = 0; i < StringLength / 2; i++) {
-                    LabelLine3 += " ";
-                }
-                LabelLine3 = "*" + LabelLine3 + Name + " " + Surname + LabelLine3 + "*";
+                for (int i = 0; i < StringLength / 2; i++)
+                    LabelLine3.append(" ");
+                LabelLine3 = new StringBuilder("*" + LabelLine3 + Name + " " + Surname + LabelLine3 + "*");
             } else {
-                StringLength = StringLength - 1;
-                for (int i = 0; i < StringLength / 2; i++) {
-                    LabelLine3 += " ";
-                }
-                LabelLine3 = "*" + LabelLine3 + Name + " " + Surname + LabelLine3 + " *";
+                StringLength--;
+                for (int i = 0; i < StringLength / 2; i++)
+                    LabelLine3.append(" ");
+                LabelLine3 = new StringBuilder("*" + LabelLine3 + Name + " " + Surname + LabelLine3 + " *");
             }
         }
         System.out.println(LabelLine1);
