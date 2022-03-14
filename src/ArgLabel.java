@@ -15,28 +15,24 @@ public class ArgLabel {
        String LabelLine4 = "***********************************";
        String Name = args[0];
        String Surname = args[1];
-       int StringLength = Name.length() + Surname.length() - 30;
-
-       //StringLength < 0
-        if (StringLength < 0){
-            if (StringLength % 2 == 0){
-                for(int i = 0; i < StringLength/2; i++){
-                    LabelLine3
+       int StringLength = 32 - Name.length() - Surname.length();
+       if (StringLength > 0) {
+            if (StringLength % 2 == 0) {
+                for (int i = 0; i < StringLength / 2; i++) {
+                    LabelLine3 += " ";
                 }
-
-            }
-            else {
-
+                LabelLine3 = "*" + LabelLine3 + Name + " " + Surname + LabelLine3 + "*";
+            } else {
+                StringLength = StringLength - 1;
+                for (int i = 0; i < StringLength / 2; i++) {
+                    LabelLine3 += " ";
+                }
+                LabelLine3 = "*" + LabelLine3 + Name + " " + Surname + LabelLine3 + " *";
             }
         }
-
-        LabelLine3 = "* "+ Name + " " + Surname + " *";
-
         System.out.println(LabelLine1);
         System.out.println(LabelLine2);
         System.out.println(LabelLine3);
         System.out.println(LabelLine4);
-
-
     }
 }
